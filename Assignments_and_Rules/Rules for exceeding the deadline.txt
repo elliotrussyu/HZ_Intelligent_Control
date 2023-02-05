@@ -1,0 +1,5 @@
+Exceeded hours: x (always rounded up to the next integer! So, if you exceed at least 1 minute, it's counted as 1 hour! If you exceed 1 hour + 1 minute, it's counted as 2 hours!)
+
+Final score before the deduction: s0
+
+Final score after the deduction: score_final = s0 * ( 1 - (sqrt(x*2)/20) )

@@ -1,0 +1,77 @@
+immutable objects
+mutable objects
+
+a = 1
+a = 2
+b = [1,2]
+b[0] = 3
+namespace 	objects
+a 	X->(destroyed)	1 (int, immutable)
+	-> 	2 (int, immutable)
+
+b	-> 	[1,2]X ->[3,2]
+
+
+id()
+--------------------------------
+a -> 1 (object0)
+b -> [1,2] (object1)
+haha we are in this_func:
+	c = a -> 1 (object0)
+	d = b -> [1,2] (object1)
+	
+	c = c + 1  c X-> 1 -> 2 (obj2) | a -> 1(obj0)
+	d = [3,2] (ojb1) | b -> (obj1) [3,2]
+
+end of this_func: c , d are cleared from the namespce
+
+a -> 1 (obj0)
+b -> (obj1) [3,2]
+
+-------------------
+def this_func(c,d):
+    operations
+
+    return c,d
+
+a, b = this_func(a, b)
+
+
+--------------------------------
+a -> 1 (object0)
+b -> [1,2] (object1)
+haha we are in this_func:
+	c = a -> 1 (object0)
+	d = b -> [1,2] (object1)
+	
+	c = c + 1  c X-> 1 -> 2 (obj2) | a -> 1(obj0)
+	d = [3,2] (obj1) | b -> (obj1) [3,2]
+	d = [7,8] (obj3) d X-> (obj1) ->(obj3) | b -> (obj1) [3,2]
+	d = [8] (obj3)
+end of this_func: c , d are cleared from the namespce
+
+a -> 1 (obj0)
+b -> (obj1) [3,2]
+
+------------------------------------
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.plot([])
+
+-----------------------------------
+>>> ls
+test.py temp.py
+>>> nano test.py
+import temp
+>>> python3 test.py
+
+__main__ = 'test.py'
+temp.py script executed once
+
+----------------------------------
+head - Track 1
+tails - Track 2
+
+group 3: track 2
+group 5: track 2
