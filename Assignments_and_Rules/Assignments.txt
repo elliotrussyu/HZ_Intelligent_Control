@@ -1,0 +1,11 @@
+Assignments
+
+Mandatory:
+
+	Caesar Coding Challenge
+
+Choose 2 from 3
+
+	Cell phone network connection simulator (Operations Strategy)
+	PID controller simulator from noisy signals (De-noising technique)
+	Fair or not? Synthetic hiring data exploration (Ethics discussion, what is fair?)
